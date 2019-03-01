@@ -1,0 +1,108 @@
+2019-02-22 14:09:14,814 ERROR: Exception on /comment/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 434, in comment
+    return render_template('home/loan_request/comment.html', form=form, title='Comment', employees=employees)
+UnboundLocalError: local variable 'comment' referenced before assignment
+2019-02-22 14:11:42,900 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:34:39,746 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:34:44,408 ERROR: Exception on /comment/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+TypeError: comment() missing 2 required positional arguments: 'current_user' and 'loan_request_id'
+2019-02-22 14:49:26,920 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:50:09,783 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:50:24,904 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:52:48,151 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:55:27,765 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:55:47,090 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 14:56:25,673 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 15:05:50,099 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 15:33:27,378 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:00:38,715 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:00:50,559 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:00:55,543 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:01:37,033 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:12:55,740 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:14:37,269 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:15:43,207 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:15:49,971 ERROR: Exception on /close/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 472, in close
+    return render_template('home/loan_request/comment.html', form=form, title='Comment', employees=employees, loan_request_id=loan_request)
+UnboundLocalError: local variable 'loan_request' referenced before assignment
+2019-02-22 16:19:28,558 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:19:32,771 ERROR: Exception on /close/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 472, in close
+    return render_template('home/loan_request/comment.html', form=form, title='Comment', employees=employees, loan_request_id=loan_request.id)
+UnboundLocalError: local variable 'loan_request' referenced before assignment
+2019-02-22 16:19:39,302 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:20:10,747 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:21:54,236 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:31:23,106 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:38:15,105 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:38:55,303 ERROR: Exception on /finished/10 [POST] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 456, in finished
+    if loan_request.close == True:
+AttributeError: 'Loan_request' object has no attribute 'close'
+2019-02-22 16:40:29,272 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]

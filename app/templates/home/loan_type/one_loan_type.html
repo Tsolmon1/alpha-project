@@ -1,0 +1,73 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Operator Dashboard{% endblock %}
+{% block body %}
+                          <br/>
+                          <br/>
+  <div class="content-section">
+     <div class="outer">
+        <div class="middle">
+              <div class="inner">
+                    <div class="center">                        
+                          <table class="table table-striped table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th width="15%"> Id </th>                 
+                                    <th width="30%"> Нэр </th>
+                                    <th width="15%"> Зээлийн доод хэмжээ </th>
+                                    <th width="30%"> Зээлийн дээд хэмжээ </th>                  
+                                    <th width="30%"> Хоногийн доод хэмжээ </th>
+                                    <th width="30%"> Хоногийн дээд хэмжээ </th>
+                                    <th width="30%"> Эхлэх өдөр </th>
+                                    <th width="30%"> Дуусах өдөр </th>
+                                    <th width="15%"> Хүү </th>
+                                    <th width="30%"> Сонирхсон төрөл </th>
+                                    <th width="15%"> Засах </th>
+                                    <th width="15%"> Устгах </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                      
+                                      
+                                 
+                                      <tr>
+                                        <td>  
+                                          {{ loan_type.id }}
+                                        </td>                                                                       
+                                                                  
+                                        <td>                
+                                          {{ loan_type.name }}
+                                        </td>
+                                        <td>
+                                          {{ loan_type.amount_from }}
+                                        </td> 
+                                        <td> {{ loan_type.amount_to }} </td> 
+                                        <td> {{ loan_type.days_from }} </td> 
+                                        <td> {{ loan_type.days_to }} </td>
+                                        <td> {{ loan_type.date_from }} </td>
+                                        <td> {{ loan_type.date_to }} </td>
+                                        <td> {{ loan_type.interest_rate }} </td>
+                                        <td> {{ loan_type.interest_type }} </td>
+                  
+                                        <td>
+                                          <a href="{{ url_for('home.edit_loan_type', id=loan_type.id) }}">
+                                            <i class="fa fa-pencil"></i> Засах
+                                          </a>
+                                        </td>
+                                        <td>
+                                          <a href="{{ url_for('home.delete_loan_type', id=loan_type.id) }}">
+                                            <i class="fa fa-trash"></i> Устгах
+                                          </a>
+                                        </td>
+                                      </tr>
+                                  
+                    
+                                </tbody>
+                              </table>   
+                                                                    
+                          </div>
+                 </div>      
+             </div>
+        </div>
+    </div>  
+  {% endblock %}

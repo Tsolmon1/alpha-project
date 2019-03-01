@@ -1,0 +1,100 @@
+2019-02-22 16:40:35,591 ERROR: Exception on /finished/10 [POST] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1230, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 198, in execute
+    res = self._query(query)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 304, in _query
+    db.query(q)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\connections.py", line 217, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1054, "Unknown column 'loan_requests.close' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 454, in finished
+    loan_request = Loan_request.query.filter_by(id=id).first()
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3010, in first
+    ret = list(self[0:1])
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2800, in __getitem__
+    return list(res)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3112, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3137, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 974, in execute
+    return meth(self, multiparams, params)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1093, in _execute_clauseelement
+    distilled_params,
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1234, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1452, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+    raise value.with_traceback(tb)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1230, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 198, in execute
+    res = self._query(query)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 304, in _query
+    db.query(q)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\connections.py", line 217, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1054, "Unknown column 'loan_requests.close' in 'field list'") [SQL: 'SELECT loan_requests.id AS loan_requests_id, loan_requests.approved AS loan_requests_approved, loan_requests.user_id AS loan_requests_user_id, loan_requests.loan_type_id AS loan_requests_loan_type_id, loan_requests.amount AS loan_requests_amount, loan_requests.days AS loan_requests_days, loan_requests.timestamp AS loan_requests_timestamp, loan_requests.cancel AS loan_requests_cancel, loan_requests.close AS loan_requests_close \nFROM loan_requests \nWHERE loan_requests.id = %s \n LIMIT %s'] [parameters: (10, 1)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2019-02-22 16:40:51,073 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:40:55,758 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:40:59,499 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 16:51:24,514 ERROR: Exception on /search [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python36\scripts\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 295, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\python-project-1\test-2\admin\app\models.py", line 13, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\python-project-1\test-2\admin\app\search.py", line 23, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.TransportError: TransportError(503, 'search_phase_execution_exception')

@@ -1,0 +1,65 @@
+2019-03-01 09:31:21,576 ERROR: Exception on /login [POST] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1230, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 198, in execute
+    res = self._query(query)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 304, in _query
+    db.query(q)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\connections.py", line 217, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.OperationalError: (1932, "Table 'dreamteam_db.employees' doesn't exist in engine")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-2\admin\app\auth\views.py", line 16, in login
+    employee = Employee.query.filter_by(email=form.email.data).first()
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3010, in first
+    ret = list(self[0:1])
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 2800, in __getitem__
+    return list(res)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3112, in __iter__
+    return self._execute_and_instances(context)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3137, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 974, in execute
+    return meth(self, multiparams, params)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 273, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1093, in _execute_clauseelement
+    distilled_params,
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1234, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1452, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\util\compat.py", line 296, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\util\compat.py", line 276, in reraise
+    raise value.with_traceback(tb)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1230, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\engine\default.py", line 536, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 198, in execute
+    res = self._query(query)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\cursors.py", line 304, in _query
+    db.query(q)
+  File "c:\python36\scripts\venv\lib\site-packages\MySQLdb\connections.py", line 217, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.OperationalError: (MySQLdb._exceptions.OperationalError) (1932, "Table 'dreamteam_db.employees' doesn't exist in engine") [SQL: 'SELECT employees.id AS employees_id, employees.email AS employees_email, employees.username AS employees_username, employees.first_name AS employees_first_name, employees.last_name AS employees_last_name, employees.password_hash AS employees_password_hash, employees.role_id AS employees_role_id, employees.is_admin AS employees_is_admin, employees.last_message_read_time AS employees_last_message_read_time \nFROM employees \nWHERE employees.email = %s \n LIMIT %s'] [parameters: ('test@gmail.com', 1)] (Background on this error at: http://sqlalche.me/e/e3q8)
+2019-03-01 09:31:40,558 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]

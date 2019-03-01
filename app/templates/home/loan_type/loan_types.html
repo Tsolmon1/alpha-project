@@ -1,0 +1,34 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Loan types{% endblock %}
+{% block body %}
+<div class="content-section">
+  <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <div class="center">
+        <br/>
+        {{ utils.flashed_messages() }}
+        <br/>
+        <h1 style="text-align:center;">Зээлийн төрөл</h1>
+        {% if loan_types %}
+          <hr class="intro-divider">
+           {% include 'home/loan_type/loan_type.html' %}        
+            
+        {% else %}
+             <div style="text-align: center">
+              <h3> Зээлийн төрөл нэмэгдээгүй байна. </h3>
+              <hr class="intro-divider">
+        {% endif %}
+                 <a href="{{ url_for('home.register') }}" class="btn btn-default btn-lg">
+                     <i class="fa fa-plus"></i>
+                        Зээлийн төрөл нэмэх
+                 </a>
+             </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,72 @@
+2019-02-22 17:39:31,620 ERROR: Exception on /comment/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 435, in comment
+    return render_template('home/loan_request/comment.html', form=form, title='Comment', employees=employees, loan_request_id=loan_request.id, employee_id=employees.id)
+UnboundLocalError: local variable 'loan_request' referenced before assignment
+2019-02-22 17:43:17,637 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:43:22,560 ERROR: Exception on /comment/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 435, in comment
+    return render_template('home/loan_request/comment.html', form=form, title='Comment', employees=employees, loan_request_id=id, employee_id=employees.id)
+AttributeError: 'list' object has no attribute 'id'
+2019-02-22 17:45:05,834 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:45:08,823 ERROR: Exception on /comment/10 [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 435, in comment
+    return render_template('home/loan_request/comment.html', form=form, title='Comment', employees=employees, employee_id=employees.id)
+AttributeError: 'list' object has no attribute 'id'
+2019-02-22 17:45:39,333 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 18:02:09,912 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-27 09:52:01,274 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:52:11,905 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:52:46,947 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:52:49,758 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:52:57,677 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:56:00,221 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:56:26,128 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 09:57:49,336 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 10:02:15,761 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 10:02:22,310 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 10:02:26,994 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 10:19:15,992 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 10:20:32,174 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 11:15:41,603 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 11:26:43,040 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 11:29:47,446 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]
+2019-02-27 11:33:41,947 INFO: Microblog startup [in C:\python-project-2\admin\app\__init__.py:81]

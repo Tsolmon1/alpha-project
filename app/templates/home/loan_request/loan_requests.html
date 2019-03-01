@@ -1,0 +1,22 @@
+ {% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Operator Dashboard{% endblock %}
+{% block body %}
+                          <br/>
+                          <br/>
+                          {{ utils.flashed_messages() }}
+                          <br/>
+                          <h1 style="text-align:center;">Зээлийн хүсэлтүүд</h1>
+                                {% if loan_requests %}
+                                      <hr class="intro-divider">
+                                        
+                                      {% include 'home/loan_request/loan_request.html' %}                                                      
+                                          
+                                {% else %}
+                                              <div style="text-align: center">
+                                                <h3> Зээлийн хүсэлт нэмэгдээгүй байна. </h3>
+                                                <hr class="intro-divider">
+                                              </div>
+                                {% endif %}
+
+{% endblock %}

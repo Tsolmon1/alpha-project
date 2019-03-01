@@ -1,0 +1,82 @@
+
+                               <div class="center">   
+
+                                            <table class="table table-striped table-bordered">
+                                              <thead>
+                                                <tr>
+                                                  <th width="15%"> id </th>   
+                                                  <th width="15%"> зээлийн төрлийн id </th>                                                                  
+                                                                                               
+                                                  <th width="15%"> хэрэглэгчийн id </th>  
+                                                  <th width="15%"> Мөнгөн дүн </th> 
+                                                  <th width="15%"> Хоног </th> 
+                                                  <th width="15%"> баталгаажуулах </th>      
+                                                  <th width="15%"> цуцлах </th>  
+                                                  <th width="15%"> хаах </th>         
+                                                </tr>
+                                              </thead>
+                                              <tbody>   
+                                                {% for loan_request in loan_requests %}                                        
+                                                    <tr>
+                                                        <td> {{ loan_request.id }} </td> 
+                                                                       
+                                                        <td> 
+                                                            <a href="{{ url_for('home.get_one_loan_type', loan_type_id=loan_request.loan_type_id) }}" class="btn btn-success">
+                                                              {{ loan_request.loan_type_id }} </td> 
+                                                            </a>
+                                                        <!-- <td>                
+                                                          {{ loan_request.approved }}
+                                                        </td> -->
+                                                        <td>
+                                                            <a href="{{ url_for('home.get_one_user', user_id=loan_request.user_id) }}" class="btn btn-success">
+                                                              {{ loan_request.user_id }}
+                                                            </a>
+                                                        </td> 
+                                                        <td> {{ loan_request.amount }} </td> 
+                                                        <td> {{ loan_request.days }} </td>                     
+                                                        <td>
+                                                            {% if loan_request.approved %}
+                                                               <a href="{{ url_for('home.confirm_user', id=loan_request.id) }}" class="btn btn-success">
+                                                                  баталгаажуулсан
+                                                               </a>
+                                                            {% else %}
+                                                               <a href="{{ url_for('home.confirm_user', id=loan_request.id) }}" class="btn btn-danger">
+                                                                  баталгаажуулаагүй
+                                                               </a>
+                                                            {% endif %}
+                                                        </td>   
+                                                        <td>
+                                                            {% if loan_request.cancel %}
+                                                              <a href="{{ url_for('home.comment', id=loan_request.id) }}" class="btn btn-success">                                                               
+                                                                цуцалсан
+                                                              </a>
+                                                            {% else %}                                                             
+                                                               
+                                                               <a href="{{ url_for('home.comment', id=loan_request.id) }}" class="btn btn-danger">
+                                                                цуцлаагүй
+                                                              </a>
+                                                            {% endif %}
+                                                        </td> 
+                                                        <td>
+                                                          {% if loan_request.close %}
+                                                            <a href="{{ url_for('home.finished', id=loan_request.id) }}" class="btn btn-success">                                                               
+                                                              хаагдсан
+                                                            </a>
+                                                          {% else %}                                                             
+                                                             
+                                                             <a href="{{ url_for('home.finished', id=loan_request.id) }}" class="btn btn-danger">
+                                                              хаагдаагүй
+                                                            </a>
+                                                          {% endif %}
+                                                      </td> 
+                                                    </tr>
+                                                 {% endfor %}
+                                                </tbody>
+                                            </table>    
+                                          {% if prev_url %}
+                                            <a href="{{ prev_url }}">Өмнөх</a>
+                                          {% endif %}
+                                          {% if next_url %}
+                                            <a href="{{ next_url }}">Дараах</a>
+                                          {% endif %}                                           
+                                </div>

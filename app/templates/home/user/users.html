@@ -1,0 +1,45 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Operator Dashboard{% endblock %}
+{% block body %}
+ 
+                          <br/>
+                          {{ utils.flashed_messages() }}
+                          <br/>
+                          <h1 style="text-align:center;">Хэрэглэгчид</h1>                           
+                             
+                            {% if users %}
+                              <hr class="intro-divider">
+                                <div class="center">
+                                    {% if g.search_form %}
+                      
+                                 <form class="navbar-form navbar-left" method="get"
+                                  action="{{ url_for('home.search') }}">
+                                  <div class="form-group">
+                                    {{ g.search_form.q(size=20, class='form-control',
+                                        placeholder=g.search_form.q.label.text) }}
+                                  </div>
+                                 </form>
+
+                                     
+                                      {% include 'home/user/user.html' %}
+                                              
+                              
+                                 </div>
+
+                              {% endif %}                             
+                                    
+                                   
+                              
+                      
+                              <div style="text-align: center">
+                                {% else %}
+                                  <div style="text-align: center">
+                                    <h3> Оператор нэмэгдээгүй байна. </h3>
+                                    <hr class="intro-divider">
+                                {% endif %}
+                              
+                                  </div>
+                              </div>
+                        
+{% endblock %}

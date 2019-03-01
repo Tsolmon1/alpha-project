@@ -1,0 +1,105 @@
+2019-02-22 16:51:37,401 ERROR: Exception on /search [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python36\scripts\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 295, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\python-project-1\test-2\admin\app\models.py", line 13, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\python-project-1\test-2\admin\app\search.py", line 23, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "Orgil Bold",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
+2019-02-22 16:51:52,199 ERROR: Exception on /search [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python36\scripts\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 295, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\python-project-1\test-2\admin\app\models.py", line 13, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\python-project-1\test-2\admin\app\search.py", line 23, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "Orgil",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
+2019-02-22 16:52:06,715 ERROR: Exception on /search [GET] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python36\scripts\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\python-project-1\test-2\admin\app\home\views.py", line 295, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\python-project-1\test-2\admin\app\models.py", line 13, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\python-project-1\test-2\admin\app\search.py", line 23, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\__init__.py", line 660, in search
+    doc_type, '_search'), params=params, body=body)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 186, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\base.py", line 125, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(status_code, error_message, additional_info)
+elasticsearch.exceptions.RequestError: RequestError(400, 'search_phase_execution_exception', 'failed to create query: {\n  "multi_match" : {\n    "query" : "Orgil Bold",\n    "fields" : [\n      "*^1.0"\n    ],\n    "type" : "best_fields",\n    "operator" : "OR",\n    "slop" : 0,\n    "prefix_length" : 0,\n    "max_expansions" : 50,\n    "zero_terms_query" : "NONE",\n    "auto_generate_synonyms_phrase_query" : true,\n    "fuzzy_transpositions" : true,\n    "boost" : 1.0\n  }\n}')
+2019-02-22 16:53:50,468 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:30:13,585 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:31:37,858 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:32:44,167 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:35:06,938 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]
+2019-02-22 17:39:22,959 INFO: Microblog startup [in C:\python-project-1\test-2\admin\app\__init__.py:81]

@@ -1,0 +1,50 @@
+{% import "bootstrap/utils.html" as utils %}
+{% extends "base.html" %}
+{% block title %}Operator Dashboard{% endblock %}
+{% block body %}
+                          <br/>
+                          <br/>
+                            
+                            <div class="center">   
+
+                                <table class="table table-striped table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th width="15%"> id </th>   
+                                      <th width="15%"> зээлийн төрлийн id </th>                                                                  
+                                                                                   
+                                      <th width="15%"> хэрэглэгчийн id </th>  
+                                      <th width="15%"> Мөнгөн дүн </th> 
+                                      <th width="15%"> Хоног </th> 
+                                      <th width="15%"> баталгаажуулах </th>      
+                                      <th width="15%"> цуцлах </th>  
+                                      <th width="15%"> хаах </th>   
+                                      <th width="15%"> хугацаа </th>        
+                                    </tr>
+                                  </thead>
+                                  <tbody>   
+                                                                        
+                                        <tr>
+                                          <td> {{ loan_request.id }} </td> 
+                                                           
+                                          <td> {{ loan_request.loan_type_id }} </td> 
+                                          <!-- <td>                
+                                            {{ loan_request.approved }}
+                                          </td> -->
+                                          <td>
+                                            {{ loan_request.user_id }}
+                                          </td> 
+                                         
+                                          <td> {{ loan_request.amount }} </td> 
+                                          <td> {{ loan_request.days }} </td>     
+                                          <td> {{ loan_request.approved }} </td>                 
+                                          <td> {{ loan_request.cancel }} </td> 
+                                          <td> {{ loan_request.close }} </td> 
+                                          <td> {{ loan_request.timestamp }} </td> 
+                                        </tr>
+                                    
+                                    </tbody>
+                                </table>    
+                                                                    
+                            </div>
+        {% endblock %}

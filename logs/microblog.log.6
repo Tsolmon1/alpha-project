@@ -1,0 +1,81 @@
+2019-02-27 11:34:23,616 ERROR: Exception on /users/edit/1 [POST] [in c:\python36\scripts\venv\lib\site-packages\flask\app.py:1761]
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 172, in perform_request
+    response = self.pool.urlopen(method, url, body, retries=Retry(False), headers=request_headers, **kw)
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\util\retry.py", line 343, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\packages\six.py", line 686, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "c:\python36\Lib\http\client.py", line 1239, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "c:\python36\Lib\http\client.py", line 1285, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "c:\python36\Lib\http\client.py", line 1234, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "c:\python36\Lib\http\client.py", line 1026, in _send_output
+    self.send(msg)
+  File "c:\python36\Lib\http\client.py", line 964, in send
+    self.connect()
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "c:\python36\scripts\venv\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001C9834CC978>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python36\scripts\venv\lib\site-packages\flask\_compat.py", line 35, in reraise
+    raise value
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python36\scripts\venv\lib\site-packages\flask\app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python36\scripts\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\python-project-2\admin\app\home\views.py", line 265, in edit_user
+    db.session.commit()
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1008, in commit
+    self.transaction.commit()
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\orm\session.py", line 494, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\python36\scripts\venv\lib\site-packages\sqlalchemy\event\attr.py", line 259, in __call__
+    fn(*args, **kw)
+  File "C:\python-project-2\admin\app\models.py", line 37, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "C:\python-project-2\admin\app\search.py", line 10, in add_to_index
+    body=payload)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\utils.py", line 76, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\client\__init__.py", line 319, in index
+    _make_path(index, doc_type, id), params=params, body=body)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\transport.py", line 318, in perform_request
+    status, headers_response, data = connection.perform_request(method, url, params, body, headers=headers, ignore=ignore, timeout=timeout)
+  File "c:\python36\scripts\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 181, in perform_request
+    raise ConnectionError('N/A', str(e), e)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x000001C9834CC978>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x000001C9834CC978>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)

@@ -1,0 +1,121 @@
+                            <table class="table table-striped table-bordered">
+                                        <thead>
+                                          <tr>
+                                            <th width="15%"> Id </th>  
+                                            <th width="15%"> Нэр </th>                 
+                                            <th width="30%"> Регистер </th>
+                                            <th width="15%"> Утас </th>
+                                            <th width="15%"> Иргэний үнэмлэхний дугаар </th>
+                                            <th width="15%"> Цахим шуудангийн хаяг </th>
+                                            <th width="30%"> Хаяг </th>
+                                            <th width="15%"> Холбоотой хүний утас </th>
+                                            <th width="30%"> Гэрлэсэн эсэх </th>
+                                            <th width="15%"> Өрхийн орлого </th>
+                                            <th width="15%"> Өрхийн гишүүний орлого </th>
+                                            <th width="15%"> Боловсролын түвшин </th>
+                                            <th width="15%"> Ажилтай эсэх </th>
+                                            <th width="15%"> Компаны нэр </th>
+                                            <th width="15%"> Энэ компанид ажилсан жил </th>
+                                            <th width="15%"> Ажилсан байгууллагын тоо </th>
+                                            <th width="15%"> Орлогын үүсвэр </th>
+                                            <th width="15%"> Сарын орлого </th>
+                                            <th width="15%"> Өмнө зээл авч байсан эсэх </th>
+                                            <th width="15%"> Идэвхтэй зээл байгаа эсэх </th>
+                                            <th width="15%"> Нийт идэвхтэй зээл </th>
+                                            <th width="15%"> Интернет дансны код </th>
+                                            <th width="15%"> Засах </th>
+                                            <th width="15%"> Устгах </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for user in users %}
+                                           
+                                              <tr>
+                                                <td> {{ user.id }} </td> 
+                                                <td> {{ user.full_name }} </td>                                                
+                                          
+                                                <td>
+                                              
+                                                  {{ user.register_number }}
+                                                </td>
+                                                <td>
+                                                  {{ user.phone_number }}
+                                                </td>
+                                                <td>
+                                                  {{ user.civil_number }}
+                                                </td>
+                                                <td>
+                                                  {{ user.email }}
+                                                </td>
+                                                <td>
+                                                  {{ user.address }}
+                                                </td>
+                                                <td>
+                                                  {{ user.relate_phone }}
+                                                </td>
+                                                <td>
+                                                  {{ user.married }}
+                                                </td>
+                                                <td>
+                                                  {{ user.home_income }}
+                                                </td>
+                                                <td>
+                                                  {{ user.home_member_income }}
+                                                </td>
+                                                <td>
+                                                  {{ user.educational_level }}
+                                                </td>
+                                                <td>
+                                                  {{ user.is_job }}
+                                                </td>
+                                                <td>
+                                                  {{ user.company_name }}
+                                                </td>
+                                                <td>
+                                                  {{ user.this_company_worked_year }}
+                                                </td>
+                                                <td>
+                                                  {{ user.worked_organ_number }}
+                                                </td>
+                                                <td>
+                                                  {{ user.income_source }}
+                                                </td>
+                                                <td>
+                                                  {{ user.month_income }}
+                                                </td>
+                                                <td>
+                                                  {{ user.is_before_loan }}
+                                                </td>
+                                                <td>
+                                                  {{ user.is_activate_loan }}
+                                                </td>
+                                                <td>
+                                                  {{ user.total_activate_loan }}
+                                                </td>
+                                                <td>
+                                                  {{ user.internet_account_code }}
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url_for('home.edit_user', id=user.id) }}">
+                                                      <i class="fa fa-pencil"></i> Засах
+                                                    </a>
+                                                  </td>
+                                                  <td>
+                                                    <a href="{{ url_for('home.delete_user', id=user.id) }}">
+                                                      <i class="fa fa-trash"></i> Устгах
+                                                    </a>
+                                                  </td>
+                                              </tr>
+                                            
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                {% if prev_url %}
+                                  <a href="{{ prev_url }}">Өмнөх</a>
+                                {% endif %}
+
+                                 
+
+                                {% if next_url %}
+                                  <a href="{{ next_url }}">Дараах</a>
+                                {% endif %}    

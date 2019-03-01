@@ -1,0 +1,28 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+{% block title %}
+    {% if add_employee %}
+        Оператор нэмэх
+    {% else %}
+        Оператор засах
+    {% endif %}
+{% endblock %}
+{% block body %}
+<div class="content-section">
+ <div class="outer">
+    <div class="middle">
+      <div class="inner">
+        <div class="center">
+            {% if add_employee %}
+                <h1>Оператор нэмэх</h1>
+            {% else %}
+                <h1>Оператор засах</h1>
+            {% endif %}
+            <br/>
+            {{ wtf.quick_form(form, novalidate=True) }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
